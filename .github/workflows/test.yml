@@ -1,0 +1,35 @@
+name: Test Formula
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: brew test-bot
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Install formula
+        run: |
+          brew install --verbose Formula/kindling.rb
+
+      - name: Test formula
+        run: |
+          brew test Formula/kindling.rb
+
+      - name: Audit formula
+        run: |
+          brew audit --strict Formula/kindling.rb

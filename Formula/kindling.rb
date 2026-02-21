@@ -2,10 +2,13 @@
 # frozen_string_literal: true
 
 class Kindling < Formula
-  desc "Local Kubernetes dev environments powered by Kind — push code, your laptop builds & runs it"
+  desc "Local Kubernetes dev environments powered by Kind"
   homepage "https://github.com/kindling-sh/kindling"
   version "0.4.0"
   license "Apache-2.0"
+
+  depends_on "kind"
+  depends_on "kubectl"
 
   on_macos do
     on_arm do
@@ -30,9 +33,6 @@ class Kindling < Formula
       sha256 "7e8c90f88d5a5238473d69b42a304fcc70cfa5f37b2368dbb527421f1aa2d4bf"
     end
   end
-
-  depends_on "kind"
-  depends_on "kubectl"
 
   def install
     bin.install "kindling"

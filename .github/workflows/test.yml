@@ -22,9 +22,8 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Tap and install formula
+      - name: Install formula
         run: |
-          brew tap kindling-sh/tap ${{ github.workspace }}
           brew install --verbose kindling-sh/tap/kindling
 
       - name: Test formula

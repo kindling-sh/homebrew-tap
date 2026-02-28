@@ -14,7 +14,7 @@ class Kindling < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/kindling-sh/kindling/releases/download/v0.8.0/kindling_0.8.0_darwin_amd64.tar.gz"
-      sha256 "563539e8049063a5352ab2264c1632f3c737d6a3a536294933d8aba49456d951"
+      sha256 "6e5a220b58c67148b874fb1e73d8700e20376842d5b8d4324cb768e2098a1cdd"
 
       define_method(:install) do
         bin.install "kindling"
@@ -22,7 +22,7 @@ class Kindling < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/kindling-sh/kindling/releases/download/v0.8.0/kindling_0.8.0_darwin_arm64.tar.gz"
-      sha256 "e227e93f818ef1e336fb5aea536532afffc497e5f360627ec452ea02bf3699aa"
+      sha256 "bd766539d3644fb8aaccb140820b449b096fb511b2442fd8cd669bb92e1883ac"
 
       define_method(:install) do
         bin.install "kindling"
@@ -33,14 +33,14 @@ class Kindling < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/kindling-sh/kindling/releases/download/v0.8.0/kindling_0.8.0_linux_amd64.tar.gz"
-      sha256 "b5dd1e45e83d77716a139fa1733732a7277319d7fed55292eebf88896dd4c9e4"
+      sha256 "c79748dd24fc1fb0b976fd7803a8e617cb4e45bceec5768dcc9179f0861bbf0d"
       define_method(:install) do
         bin.install "kindling"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/kindling-sh/kindling/releases/download/v0.8.0/kindling_0.8.0_linux_arm64.tar.gz"
-      sha256 "be1195d8ff0e41e71f7e36d7911779e788d75beda0014f9159113afba5e6ef0a"
+      sha256 "6f1a004ef625fa832713e5032442534aca2b28aec0e6ca73fd05e525540511fa"
       define_method(:install) do
         bin.install "kindling"
       end

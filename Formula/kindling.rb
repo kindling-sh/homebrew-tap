@@ -5,7 +5,7 @@
 class Kindling < Formula
   desc "Local Kubernetes dev environments powered by Kind"
   homepage "https://github.com/kindling-sh/kindling"
-  version "0.8.0"
+  version "0.9.0"
   license "Apache-2.0"
 
   depends_on "kind"
@@ -13,16 +13,16 @@ class Kindling < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kindling-sh/kindling/releases/download/v0.8.0/kindling_0.8.0_darwin_amd64.tar.gz"
-      sha256 "6e5a220b58c67148b874fb1e73d8700e20376842d5b8d4324cb768e2098a1cdd"
+      url "https://github.com/kindling-sh/kindling/releases/download/v0.9.0/kindling_0.9.0_darwin_amd64.tar.gz"
+      sha256 "ad3d35a1c5f5ef9b45a9c1d49db7ebd306080589f582296090d2d20685a78058"
 
       define_method(:install) do
         bin.install "kindling"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kindling-sh/kindling/releases/download/v0.8.0/kindling_0.8.0_darwin_arm64.tar.gz"
-      sha256 "bd766539d3644fb8aaccb140820b449b096fb511b2442fd8cd669bb92e1883ac"
+      url "https://github.com/kindling-sh/kindling/releases/download/v0.9.0/kindling_0.9.0_darwin_arm64.tar.gz"
+      sha256 "2b9078d25dd22a975adf0501069043378cb9402206a4b3eaa807df2627226532"
 
       define_method(:install) do
         bin.install "kindling"
@@ -32,15 +32,15 @@ class Kindling < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kindling-sh/kindling/releases/download/v0.8.0/kindling_0.8.0_linux_amd64.tar.gz"
-      sha256 "c79748dd24fc1fb0b976fd7803a8e617cb4e45bceec5768dcc9179f0861bbf0d"
+      url "https://github.com/kindling-sh/kindling/releases/download/v0.9.0/kindling_0.9.0_linux_amd64.tar.gz"
+      sha256 "3baeb9ca4a4bd23df5e427d9a1ef829d6a8cf8d57d57ddd7de51abca1198a7fc"
       define_method(:install) do
         bin.install "kindling"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kindling-sh/kindling/releases/download/v0.8.0/kindling_0.8.0_linux_arm64.tar.gz"
-      sha256 "6f1a004ef625fa832713e5032442534aca2b28aec0e6ca73fd05e525540511fa"
+      url "https://github.com/kindling-sh/kindling/releases/download/v0.9.0/kindling_0.9.0_linux_arm64.tar.gz"
+      sha256 "c0dff5fe40edaefed6132fa3993e5d4a99ef9a684909cc242c360909de516d6e"
       define_method(:install) do
         bin.install "kindling"
       end
